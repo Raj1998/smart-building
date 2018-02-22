@@ -23,7 +23,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="../Paytm/PaytmKit/TxnTest.php">Payment</a></li>
+                    <li><a href="payment.php">Payment</a></li>
+                    <li><a href="notice.php">Notice</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Login</a></li>
