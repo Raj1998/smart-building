@@ -69,7 +69,7 @@
                             <td><label>txnAmount*</label></td>
                             <td><input title="TXN_AMOUNT" tabindex="10"
                                 type="text" name="TXN_AMOUNT"
-                                value="<?php echo $total;?>">
+                                value="<?php echo $total;?>" readonly>
                             </td>
                         </tr>
                         <tr>
