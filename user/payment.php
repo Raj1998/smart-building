@@ -1,5 +1,8 @@
 <?php
     include('includes/header.php');
+    if(!isset($_SESSION['username1'])){
+		header('location: index.php');
+	}
 ?>
 
 
@@ -8,10 +11,10 @@
 
 <?php
     include('includes/db.php');
-    
-    echo 'id = '.$_GET['u_id'].'<br>';
-    $user = $_GET['u_id'];
-    $q = 'SELECT * FROM `payment` WHERE u_id = '.$user.' AND p_id in (SELECT MAX(p_id) FROM `payment` GROUP BY u_id) HAVING timediff(next_payment_date, now()) < 0';
+    // --
+    echo 'id = '.$_SESSION['uid'].'<br>';
+    $user = 5;
+    $q = 'SELECT * FROM `payment` WHERE u_id = '.$user.' AND p_id in (SELECT MAX(p_id) FROM `payment` GROUP BY u_id) HAVING timediff(next_payment_date, now()) < 0 ';
     
     $result = mysqli_query($con, $q);
     $n = mysqli_num_rows($result);
@@ -34,12 +37,12 @@
             <form method="post" action="../Paytm/PaytmKit/pgRedirect.php">
                 <table border="1">
                     <tbody>
-                        <tr>
+                        <tr  style="display:none">
                             <th>S.No</th>
                             <th>Label</th>
                             <th>Value</th>
                         </tr>
-                        <tr>
+                        <tr  style="display:none">
                             <td>1</td>
                             <td><label>ORDER_ID::*</label></td>
                             <td><input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
@@ -47,26 +50,26 @@
                                 value="<?php echo  "ORDS" . rand(10000,99999999)?>">
                             </td>
                         </tr>
-                        <tr>
+                        <tr  style="display:none">
                             <td>2</td>
                             <td><label>CUSTID ::*</label></td>
                             <td><input id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="CUST001"></td>
                         </tr>
-                        <tr>
+                        <tr style="display:none">
                             <td>3</td>
                             <td><label>INDUSTRY_TYPE_ID ::*</label></td>
                             <td><input id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail"></td>
                         </tr>
-                        <tr>
+                        <tr style="display:none">
                             <td>4</td>
                             <td><label>Channel ::*</label></td>
                             <td><input id="CHANNEL_ID" tabindex="4" maxlength="12"
                                 size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display:none">
                             <td>5</td>
-                            <td><label>txnAmount*</label></td>
+                            <td><label>Total amount</label></td>
                             <td><input title="TXN_AMOUNT" tabindex="10"
                                 type="text" name="TXN_AMOUNT"
                                 value="<?php echo $total;?>" readonly>
@@ -75,11 +78,11 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><input value="CheckOut" type="submit"	onclick=""></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
-                * - Mandatory Fields
+                <input value="CheckOut" type="submit"	onclick="">
             </form>
         <?php
     }

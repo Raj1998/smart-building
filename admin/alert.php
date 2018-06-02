@@ -7,7 +7,7 @@
 <?php
     include('includes/header.php');
 ?>
-	<h1>Alerts</h1>
+	<h1>Send Notice</h1>
 
         <form role="form" method="POST">
             <div class="form-group">
@@ -20,9 +20,6 @@
             </div>
             <button type="submit" class="btn btn-info" name="submit">Send</button>
         </form>
-
-    </form>
-
 <?php
     include('includes/footer.php');
 ?>

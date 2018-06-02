@@ -58,16 +58,16 @@
                         <a class="active-menu" href="home.php"><i class="fa fa-dashboard"></i> Status</a>
                     </li>
                     <li>
-                        <a href="alert.php"><i class="fa fa-desktop"></i> Send Alerts</a>
+                        <a href="alert.php"><i class="fa fa-desktop"></i> Send Notice</a>
                     </li>
                     <li>
-                        <a href="book.php"><i class="fa fa-bar-chart-o"></i> Booking</a>
+                        <a href="showEvents.php"><i class="fa fa-bar-chart-o"></i> Event Bookings</a>
                     </li>
                     <li>
                         <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>
                     <li>
-                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
+                        <a href="add.php"><i class="fa fa-qrcode"></i> Add New member</a>
                     </li>
                     <li>
                         <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

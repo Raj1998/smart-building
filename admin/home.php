@@ -8,7 +8,7 @@
     include('includes/header.php');
 ?>
 
-    <h1>Helllll</h1>
+    <h1>Welcome to admin area</h1>
 
 <?php
     include('includes/footer.php');
